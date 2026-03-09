@@ -13,7 +13,7 @@ class BillingConfAppBar extends StatelessWidget {
         child: Row(
           children: [
             GestureDetector(
-              onTap: () => Navigator.maybePop(context),
+              onTap: () => Navigator.pop(context),
               child: const Icon(
                 Icons.arrow_back_ios,
                 color: Colors.white,
