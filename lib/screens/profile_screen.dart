@@ -81,7 +81,10 @@ class ProfileScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(12),
                             onTap: () {},
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 14),
+                              padding: const EdgeInsets.symmetric(
+                                vertical: 14,
+                                horizontal: 14,
+                              ),
                               child: Row(
                                 children: [
                                   Container(

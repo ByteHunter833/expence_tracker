@@ -191,7 +191,7 @@ class _CardsTab extends StatefulWidget {
 class _CardsTabState extends State<_CardsTab> {
   String cardNumber = '';
   String expiryDate = '';
-  String cardHolderName = 'IRVAN MOSES';
+  String cardHolderName = '';
   String cvvCode = '';
   bool isCvvFocused = false;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();

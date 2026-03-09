@@ -36,7 +36,7 @@ class _OnBoardingScreentate extends State<OnBoardingScreen> {
         child: Column(
           children: [
             Align(
-              alignment: Alignment.centerRight,
+              alignment: Alignment.center,
               child: Image.asset('assets/images/onboarding.png'),
             ),
             const SizedBox(height: 24),
