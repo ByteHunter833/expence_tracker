@@ -25,12 +25,13 @@ Demo Flutter app for expense tracking with a ready-to-use UI flow:
 
 ## Screenshots
 
-![Onboarding](assets/screeshots/onboarding.png)
-![Dashboard](assets/screeshots/dashboard.png)
-![Statistics](assets/screeshots/statistics.png)
-![Wallet](assets/screeshots/wallet_screen.png)
-![Connect Wallet](assets/screeshots/connect_wallet.png)
-![Profile](assets/screeshots/profile_screen.png)
+|                   Onboarding                    |                   Dashboard                   |                   Statistics                    |
+| :---------------------------------------------: | :-------------------------------------------: | :---------------------------------------------: |
+| ![Onboarding](assets/screeshots/onboarding.png) | ![Dashboard](assets/screeshots/dashboard.png) | ![Statistics](assets/screeshots/statistics.png) |
+
+|                     Wallet                     |                     Connect Wallet                      |                     Profile                      |
+| :--------------------------------------------: | :-----------------------------------------------------: | :----------------------------------------------: |
+| ![Wallet](assets/screeshots/wallet_screen.png) | ![Connect Wallet](assets/screeshots/connect_wallet.png) | ![Profile](assets/screeshots/profile_screen.png) |
 
 ## Project Structure
 
@@ -59,24 +60,3 @@ assets/
 flutter pub get
 flutter run
 ```
-
-Run on a specific platform:
-
-```bash
-flutter run -d android
-flutter run -d ios
-flutter run -d chrome
-```
-
-## Useful Commands
-
-```bash
-flutter analyze
-flutter test
-```
-
-## Current Project Status
-
-- This app is currently a UI/UX demo: most screen data is hardcoded.
-- Backend integration, persistent storage, and full state management are not implemented yet.
-- `test/widget_test.dart` still contains the default counter test and does not match the current UI flow.
