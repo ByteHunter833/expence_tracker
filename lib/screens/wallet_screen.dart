@@ -1,8 +1,6 @@
-// ════════════════════════════════════════════
-// WALLET SCREEN
-// ════════════════════════════════════════════
-import 'package:expence_tracker/billing_screen.dart';
 import 'package:expence_tracker/screens/connect_wallet_screen.dart';
+import 'package:expence_tracker/screens/transaction_details_expense_screen.dart';
+import 'package:expence_tracker/screens/transaction_details_income_screen.dart';
 import 'package:flutter/material.dart';
 
 class WalletScreen extends StatefulWidget {
@@ -139,7 +137,6 @@ class _WalletScreenState extends State<WalletScreen>
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Icon(Icons.arrow_back_ios, color: Colors.white, size: 20),
               const Text(
                 'Wallet',
                 style: TextStyle(
@@ -337,84 +334,82 @@ class _WalletScreenState extends State<WalletScreen>
                 ),
               );
             },
-      child: Material(
-        child: Container(
-          margin: const EdgeInsets.only(bottom: 12),
-          child: Row(
-            children: [
-              Container(
-                width: 46,
-                height: 46,
-                decoration: BoxDecoration(
-                  color: tx['bgColor'] as Color,
-                  borderRadius: BorderRadius.circular(14),
-                ),
-                child: Icon(
-                  tx['icon'] as IconData,
-                  color: tx['iconColor'] as Color,
-                  size: 24,
-                ),
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 12),
+        child: Row(
+          children: [
+            Container(
+              width: 46,
+              height: 46,
+              decoration: BoxDecoration(
+                color: tx['bgColor'] as Color,
+                borderRadius: BorderRadius.circular(14),
               ),
-              const SizedBox(width: 12),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      tx['name'] as String,
-                      style: const TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xFF1A1A2E),
-                      ),
-                    ),
-                    Text(
-                      tx['date'] as String,
-                      style: const TextStyle(
-                        fontSize: 12,
-                        color: Color(0xFF9CA3AF),
-                      ),
-                    ),
-                  ],
-                ),
+              child: Icon(
+                tx['icon'] as IconData,
+                color: tx['iconColor'] as Color,
+                size: 24,
               ),
-              isBill
-                  ? const SizedBox()
-                  : Text(
-                      tx['amount'] as String,
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                        color: tx['isPositive'] as bool
-                            ? const Color(0xFF2A7C76)
-                            : const Color(0xFFEF4444),
-                      ),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    tx['name'] as String,
+                    style: const TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFF1A1A2E),
                     ),
+                  ),
+                  Text(
+                    tx['date'] as String,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Color(0xFF9CA3AF),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            isBill
+                ? const SizedBox()
+                : Text(
+                    tx['amount'] as String,
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: tx['isPositive'] as bool
+                          ? const Color(0xFF2A7C76)
+                          : const Color(0xFFEF4444),
+                    ),
+                  ),
 
-              isBill
-                  ? ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const ConnectWalletScreen(),
-                          ),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                        elevation: 0,
-
-                        backgroundColor: const Color(0xffECF9F8),
-                        foregroundColor: const Color(0xff438883),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
+            isBill
+                ? ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ConnectWalletScreen(),
                         ),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      elevation: 0,
+
+                      backgroundColor: const Color(0xffECF9F8),
+                      foregroundColor: const Color(0xff438883),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
                       ),
-                      child: const Text('Pay', style: TextStyle(fontSize: 16)),
-                    )
-                  : const SizedBox(),
-            ],
-          ),
+                    ),
+                    child: const Text('Pay', style: TextStyle(fontSize: 16)),
+                  )
+                : const SizedBox(),
+          ],
         ),
       ),
     );

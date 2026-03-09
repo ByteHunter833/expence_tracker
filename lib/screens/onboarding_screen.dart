@@ -15,7 +15,7 @@ class _OnBoardingScreentate extends State<OnBoardingScreen> {
     setState(() {
       isLoading = true;
     });
-    await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 2));
     if (mounted) {
       Navigator.pushAndRemoveUntil(
         context,

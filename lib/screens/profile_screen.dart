@@ -138,12 +138,6 @@ class ProfileScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
               child: Row(
                 children: [
-                  // Back button
-                  const Icon(
-                    Icons.arrow_back_ios,
-                    color: Colors.white,
-                    size: 20,
-                  ),
                   const SizedBox(width: 16),
                   // Title
                   const Expanded(
@@ -226,11 +220,12 @@ class ProfileScreen extends StatelessWidget {
               ),
               child: ClipOval(
                 child: Container(
-                  color: const Color(0xFFE8F5F4),
-                  child: const Icon(
-                    Icons.person,
-                    size: 56,
-                    color: Color(0xFF2A7C76),
+                  decoration: const BoxDecoration(
+                    color: Color(0xFFE8F5F4),
+
+                    image: DecorationImage(
+                      image: NetworkImage('https://i.pravatar.cc/150?img=47'),
+                    ),
                   ),
                 ),
               ),

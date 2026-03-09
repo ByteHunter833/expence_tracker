@@ -4,7 +4,8 @@
 // Package: flutter_credit_card
 // ════════════════════════════════════════════
 
-import 'package:expence_tracker/billing_screen.dart';
+import 'package:expence_tracker/core/models/models.dart';
+import 'package:expence_tracker/screens/billing_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 
@@ -395,18 +396,18 @@ class _AccountsTab extends StatefulWidget {
 class _AccountsTabState extends State<_AccountsTab> {
   int _selectedIndex = 0;
 
-  final List<_AccountOption> _options = const [
-    _AccountOption(
+  final List<AccountOption> _options = const [
+    AccountOption(
       icon: Icons.account_balance,
       title: 'Bank Link',
       subtitle: 'Connect your bank account to deposit & fund',
     ),
-    _AccountOption(
+    AccountOption(
       icon: Icons.attach_money,
       title: 'Microdeposits',
       subtitle: 'Connect bank in 5-7 days',
     ),
-    _AccountOption(
+    AccountOption(
       icon: Icons.paypal,
       title: 'Paypal',
       subtitle: 'Connect your paypal account',
@@ -549,17 +550,4 @@ class _AccountsTabState extends State<_AccountsTab> {
       ),
     );
   }
-}
-
-// ─── Data model ──────────────────────────────────────────────────────────────
-class _AccountOption {
-  final IconData icon;
-  final String title;
-  final String subtitle;
-
-  const _AccountOption({
-    required this.icon,
-    required this.title,
-    required this.subtitle,
-  });
 }

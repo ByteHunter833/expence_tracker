@@ -95,28 +95,33 @@ class _MainNavigatorState extends State<MainNavigator> {
   }
 
   Widget _buildFAB() {
-    return InkWell(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (_) => const AddExpenseScreen()),
-        );
-      },
-      child: Container(
-        width: 58,
-        height: 58,
-        decoration: const BoxDecoration(
-          color: Color(0xFF2A7C76),
-          shape: BoxShape.circle,
-          boxShadow: [
-            BoxShadow(
-              color: Color(0x552A7C76),
-              blurRadius: 12,
-              offset: Offset(0, 4),
-            ),
-          ],
+    return Material(
+      color: Colors.transparent,
+      shape: const CircleBorder(),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(29), // half of 58
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const AddExpenseScreen()),
+          );
+        },
+        child: Container(
+          width: 58,
+          height: 58,
+          decoration: const BoxDecoration(
+            color: Color(0xFF2A7C76),
+            shape: BoxShape.circle,
+            boxShadow: [
+              BoxShadow(
+                color: Color(0x552A7C76),
+                blurRadius: 12,
+                offset: Offset(0, 4),
+              ),
+            ],
+          ),
+          child: const Icon(Icons.add, color: Colors.white, size: 30),
         ),
-        child: const Icon(Icons.add, color: Colors.white, size: 30),
       ),
     );
   }
